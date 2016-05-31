@@ -74,30 +74,32 @@
 </head>
 
 <body>
-    <div id="my-sticky-element" class="top-header">
+    <div class="top-header">
         <div class="row">
         </div>
     </div>
-    <script>
-        // init controller
-        var controller = new ScrollMagic.Controller();
 
-        // create a scene
-        new ScrollMagic.Scene({
-            duration: 222,  // the scene should last for a scroll distance of 100px
-            offset: 50      // start this scene after scrolling for 50px
-        })
-        .setPin("#my-sticky-element") // pins the element for the the scene's duration
-        .addTo(controller); // assign the scene to the controller
-    </script>
-
-    <div class="row" style="background-color:#f3f3f3;">
+    <div class="row" id="my-sticky-element" style="background-color:#f3f3f3;">
         <div class="large-12 columns">
 
             <h1>Arrowhead Construction</h1>
             <hr/>
         </div>
     </div>
+
+    <script>
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // create a scene
+        new ScrollMagic.Scene({
+            duration: 222,  // the scene should last for a scroll distance of 222px
+            offset: 50      // start this scene after scrolling for 50px
+        })
+        .setPin("#my-sticky-element") // pins the element for the the scene's duration
+        .addTo(controller); // assign the scene to the controller
+    </script>
+
     <div class="row">
         <div class="large-12 columns">
             <img src="http://placehold.it/1000x500&text=[banner img]">
