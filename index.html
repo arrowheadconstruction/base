@@ -29,6 +29,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="js/vendor/modernizr.js"></script>
+
+    <!--scroll magic-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+
     <style>
 
         .top-header {
@@ -59,10 +63,22 @@
 </head>
 
 <body>
-    <div class="top-header">
+    <div id="my-sticky-element" class="top-header">
         <div class="row">
         </div>
     </div>
+    <script>
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // create a scene
+        new ScrollMagic.Scene({
+            duration: 100,  // the scene should last for a scroll distance of 100px
+            offset: 50      // start this scene after scrolling for 50px
+        })
+        .setPin("#my-sticky-element") // pins the element for the the scene's duration
+        .addTo(controller); // assign the scene to the controller
+    </script>
 
     <div class="row">
         <div class="large-12 columns">
